@@ -6,6 +6,7 @@ import Palmares from './components/Palmares';
 import { getRankingFromPoints } from './data/gameData';
 import { simulateSeason } from './utils/seasonSimulator';
 import { Trophy, Award, DollarSign, Activity, Calendar, Zap, Swords, ArrowLeft, ShoppingBag } from 'lucide-react';
+import Footer from './components/Footer';
 
 export default function App() {
   // 1. Estado Global del Juego
@@ -362,6 +363,9 @@ export default function App() {
             Nueva Partida (Reiniciar)
           </button>
         </div>
+        <div className="mt-8">
+          <Footer />
+        </div>
       </div>
     );
   }
@@ -383,7 +387,8 @@ export default function App() {
 
   // --- MODO: TABS REGULARES ---
   return (
-    <div className="bg-zinc-950 min-h-screen text-zinc-100">
+    <div className="bg-zinc-950 min-h-screen text-zinc-100 flex flex-col">
+      <div className="flex-grow relative">
       {/* Tab: Dashboard (Muestra el menú del año y la simulación) */}
       {activeTab === 'dashboard' && (
         <Dashboard
@@ -414,7 +419,7 @@ export default function App() {
 
       {/* Tab: Palmarés */}
       {activeTab === 'palmares' && (
-        <div className="pb-20">
+        <div>
           <div className="sticky top-0 z-40 bg-zinc-900 border-b border-zinc-800 px-4 py-3 flex justify-between items-center">
             <button 
               onClick={() => setActiveTab('dashboard')}
@@ -441,7 +446,7 @@ export default function App() {
 
       {/* Tab: Tienda */}
       {activeTab === 'shop' && (
-        <div className="pb-20">
+        <div>
           <div className="sticky top-0 z-40 bg-zinc-900 border-b border-zinc-800 px-4 py-3 flex justify-between items-center">
             <button 
               onClick={() => setActiveTab('dashboard')}
@@ -463,6 +468,9 @@ export default function App() {
           />
         </div>
       )}
+      </div>
+
+      <Footer hasBottomNav={true} />
 
       {/* Barra de Navegación Inferior */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-900 border-t border-zinc-800 py-2.5 shadow-2xl">

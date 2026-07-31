@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PLAY_STYLES, COUNTRIES, HANDS, getOppositePlayStyle } from '../data/gameData';
 import { User, Globe, HelpCircle, Swords, Award, Zap } from 'lucide-react';
+import Footer from './Footer';
 
 export default function PlayerCreation({ onCreatePlayer }) {
   const [firstName, setFirstName] = useState('');
@@ -232,6 +233,9 @@ export default function PlayerCreation({ onCreatePlayer }) {
           Iniciar Carrera Profesional
         </button>
       </form>
+      <div className="mt-8">
+        <Footer />
+      </div>
     </div>
   );
 }

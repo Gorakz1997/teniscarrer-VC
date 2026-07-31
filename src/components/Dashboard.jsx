@@ -578,7 +578,7 @@ export default function Dashboard({
   const showSimulateButton = !isYearSimulated && !isSimulatingSeason;
 
   return (
-    <div className="flex flex-col min-h-screen bg-zinc-950 text-zinc-100 pb-20">
+    <div className="flex flex-col min-h-screen bg-zinc-950 text-zinc-100">
       
       {/* 1. Header / Status Bar Superior (Persistente) */}
       <div className="sticky top-0 z-40 bg-zinc-900 border-b border-zinc-800 px-4 py-3 shadow-md">
